@@ -26,11 +26,10 @@ Scene* Ranking::createScene(){
 }
 
 Ranking::Ranking(){
-    
+
 }
 
 Ranking::~Ranking(){
-    
 }
 
 bool Ranking::init(){
@@ -39,22 +38,23 @@ bool Ranking::init(){
         return false;
     }
     
-//    Size visibleSize = Director::getInstance()->getVisibleSize();
-//    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
+    auto rankingLabel = Label::createWithSystemFont("RANKING", "Marker Felt", visibleSize.height * 0.08);
+    rankingLabel->setPosition(Vec2(visibleSize.width / 2.0, visibleSize.height * 0.93f));
+    this->addChild(rankingLabel);
     
     auto request = new HttpRequest();
     std::string url = "";
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-//    request->setUrl("http://localhost:3000/ranking");
     url = "http://localhost:3000/ranking";
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-//    request->setUrl("http://10.0.2.2:3000/ranking");
     url = "http://10.0.2.2:3000/ranking";
 #endif
     request->setUrl(url.c_str());
     request->setRequestType(HttpRequest::Type::GET);
-    request->setResponseCallback([this](HttpClient* client, HttpResponse* response){
+    request->setResponseCallback([=](HttpClient* client, HttpResponse* response){
        
         log("responseCode:%ld %s", response->getResponseCode(), response->getHttpRequest()->getUrl());
         
@@ -72,18 +72,29 @@ bool Ranking::init(){
         }
         
         if(document.IsArray()){
+            
+            int point;
+            std::string name;
             for(int i = 0; i < document.Size(); ++i){
                 if(document[i].HasMember("point")){
-                    int point = document[i]["point"].GetInt();
+                    point = document[i]["point"].GetInt();
                     log("%d point", point);
                 }
                 if(document[i].HasMember("name")){
-                    std::string name = document[i]["name"].GetString();
+                    name = document[i]["name"].GetString();
                     log("name: %s", name.c_str());
                 }
                 
+                auto fontSize = visibleSize.height * 0.05;
+                auto y = visibleSize.height * (document.Size() - i) * 0.1 * 0.75 + visibleSize.height * 0.08;
                 
+                auto pointLabel = Label::createWithSystemFont(std::to_string(point), "Marker Felt", fontSize);
+                pointLabel->setPosition(Vec2(visibleSize.width * 0.3, y));
+                this->addChild(pointLabel);
                 
+                auto nameLabel = Label::createWithSystemFont(name, "Marker Felt", fontSize);
+                nameLabel->setPosition(Vec2(visibleSize.width * 0.7, y));
+                this->addChild(nameLabel);
             }
         }
         

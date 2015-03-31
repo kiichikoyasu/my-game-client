@@ -17,6 +17,7 @@ class Ranking : public cocos2d::Layer
 protected:
     Ranking();
     virtual ~Ranking();
+    
 public:
     static cocos2d::Scene* createScene();
     
