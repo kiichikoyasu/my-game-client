@@ -1,4 +1,5 @@
 #include "HelloWorldScene.h"
+#include "RankingScene.h"
 
 USING_NS_CC;
 
@@ -65,12 +66,43 @@ bool HelloWorld::init()
 
     // add "HelloWorld" splash screen"
     auto sprite = Sprite::create("HelloWorld.png");
-
+    
+    
     // position the sprite on the center of the screen
     sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
+    
+    auto listner = EventListenerTouchOneByOne::create();
+    listner->onTouchBegan = [this](Touch* touch, Event* event){
+        
+        auto target = static_cast<Sprite*>(event->getCurrentTarget());
+        auto targetSize = target->getContentSize();
+        auto targetRect = Rect(0, 0, targetSize.width, targetSize.height);
+        
+        auto touchPoint = target->convertToNodeSpace(touch->getLocation());
+        
+        if(targetRect.containsPoint(touchPoint)){
+            // スプライトがタッチされたら
+        
+            this->getEventDispatcher()->removeAllEventListeners();
+        
+            auto moveRankingScene = CallFunc::create([]{
+                auto scene = Ranking::createScene();
+                auto transition = TransitionPageTurn::create(0.5, scene, true);
+                Director::getInstance()->replaceScene(transition);
+            });
+        
+            this->runAction(moveRankingScene);
+            
+            return true;
+        }
+        
+        return false;
+    };
+    
+    this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listner, sprite);
     
     return true;
 }
