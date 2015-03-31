@@ -72,7 +72,6 @@ bool Ranking::init(){
         }
         
         if(document.IsArray()){
-            log("document is Array");
             for(int i = 0; i < document.Size(); ++i){
                 if(document[i].HasMember("point")){
                     int point = document[i]["point"].GetInt();
@@ -82,6 +81,9 @@ bool Ranking::init(){
                     std::string name = document[i]["name"].GetString();
                     log("name: %s", name.c_str());
                 }
+                
+                
+                
             }
         }
         
