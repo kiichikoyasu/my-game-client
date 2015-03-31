@@ -8,9 +8,14 @@
 
 #include "RankingScene.h"
 #include "network/HttpClient.h"
+#include "json/rapidjson.h"
+#include "json/document.h"
+#include "json/stringbuffer.h"
+#include "json/writer.h"
 
 USING_NS_CC;
 using namespace cocos2d::network;
+using namespace rapidjson;
 
 Scene* Ranking::createScene(){
     
@@ -56,6 +61,29 @@ bool Ranking::init(){
         std::vector<char>* data = response->getResponseData();
         std::string result(data->begin(), data->end());
         log("responseData:%s", result.c_str());
+        
+        rapidjson::Document document;
+        document.Parse<0> (result.c_str());
+        
+        log("document type is %u",document.GetType());
+        
+        if(document.HasParseError()){
+            log("%s", document.GetParseError());
+        }
+        
+        if(document.IsArray()){
+            log("document is Array");
+            for(int i = 0; i < document.Size(); ++i){
+                if(document[i].HasMember("point")){
+                    int point = document[i]["point"].GetInt();
+                    log("%d point", point);
+                }
+                if(document[i].HasMember("name")){
+                    std::string name = document[i]["name"].GetString();
+                    log("name: %s", name.c_str());
+                }
+            }
+        }
         
     });
     
