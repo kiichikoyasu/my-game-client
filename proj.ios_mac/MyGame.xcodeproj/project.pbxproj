@@ -14,6 +14,16 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3026709C1AC9A1ED0058CEDB /* RankingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3026709A1AC9A1ED0058CEDB /* RankingScene.cpp */; };
 		3026709D1AC9A1ED0058CEDB /* RankingScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3026709A1AC9A1ED0058CEDB /* RankingScene.cpp */; };
+		302670A01ACB662B0058CEDB /* Game1Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3026709E1ACB662B0058CEDB /* Game1Scene.cpp */; };
+		302670A11ACB662B0058CEDB /* Game1Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3026709E1ACB662B0058CEDB /* Game1Scene.cpp */; };
+		302670A61ACC22260058CEDB /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 302670A51ACC22260058CEDB /* Camera.png */; };
+		302670A71ACC22260058CEDB /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 302670A51ACC22260058CEDB /* Camera.png */; };
+		302670A91ACC22440058CEDB /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 302670A81ACC22440058CEDB /* Twitter.png */; };
+		302670AA1ACC22440058CEDB /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 302670A81ACC22440058CEDB /* Twitter.png */; };
+		302670AC1ACC225F0058CEDB /* CandyBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 302670AB1ACC225F0058CEDB /* CandyBar.png */; };
+		302670AD1ACC225F0058CEDB /* CandyBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 302670AB1ACC225F0058CEDB /* CandyBar.png */; };
+		302670B01ACC280C0058CEDB /* Icon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 302670AE1ACC280C0058CEDB /* Icon.cpp */; };
+		302670B11ACC280C0058CEDB /* Icon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 302670AE1ACC280C0058CEDB /* Icon.cpp */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
@@ -110,6 +120,13 @@
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3026709A1AC9A1ED0058CEDB /* RankingScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RankingScene.cpp; sourceTree = "<group>"; };
 		3026709B1AC9A1ED0058CEDB /* RankingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingScene.h; sourceTree = "<group>"; };
+		3026709E1ACB662B0058CEDB /* Game1Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game1Scene.cpp; sourceTree = "<group>"; };
+		3026709F1ACB662B0058CEDB /* Game1Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game1Scene.h; sourceTree = "<group>"; };
+		302670A51ACC22260058CEDB /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		302670A81ACC22440058CEDB /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
+		302670AB1ACC225F0058CEDB /* CandyBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CandyBar.png; sourceTree = "<group>"; };
+		302670AE1ACC280C0058CEDB /* Icon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Icon.cpp; sourceTree = "<group>"; };
+		302670AF1ACC280C0058CEDB /* Icon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Icon.h; sourceTree = "<group>"; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
 		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
@@ -276,6 +293,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				302670AB1ACC225F0058CEDB /* CandyBar.png */,
+				302670A81ACC22440058CEDB /* Twitter.png */,
+				302670A51ACC22260058CEDB /* Camera.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -295,6 +315,10 @@
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				3026709A1AC9A1ED0058CEDB /* RankingScene.cpp */,
 				3026709B1AC9A1ED0058CEDB /* RankingScene.h */,
+				3026709E1ACB662B0058CEDB /* Game1Scene.cpp */,
+				3026709F1ACB662B0058CEDB /* Game1Scene.h */,
+				302670AE1ACC280C0058CEDB /* Icon.cpp */,
+				302670AF1ACC280C0058CEDB /* Icon.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -449,10 +473,12 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				302670A61ACC22260058CEDB /* Camera.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
+				302670AC1ACC225F0058CEDB /* CandyBar.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -464,6 +490,7 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				302670A91ACC22440058CEDB /* Twitter.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
@@ -482,7 +509,10 @@
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				302670AD1ACC225F0058CEDB /* CandyBar.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				302670AA1ACC22440058CEDB /* Twitter.png in Resources */,
+				302670A71ACC22260058CEDB /* Camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +524,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				302670A01ACB662B0058CEDB /* Game1Scene.cpp in Sources */,
+				302670B01ACC280C0058CEDB /* Icon.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				3026709C1AC9A1ED0058CEDB /* RankingScene.cpp in Sources */,
@@ -506,7 +538,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302670B11ACC280C0058CEDB /* Icon.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				302670A11ACB662B0058CEDB /* Game1Scene.cpp in Sources */,
 				3026709D1AC9A1ED0058CEDB /* RankingScene.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,

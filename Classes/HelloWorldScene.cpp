@@ -1,5 +1,6 @@
 #include "HelloWorldScene.h"
 #include "RankingScene.h"
+#include "Game1Scene.h"
 
 USING_NS_CC;
 
@@ -88,13 +89,16 @@ bool HelloWorld::init()
         
             this->getEventDispatcher()->removeAllEventListeners();
         
-            auto moveRankingScene = CallFunc::create([]{
-                auto scene = Ranking::createScene();
+//            auto moveRankingScene = CallFunc::create([]{
+            auto moveGame1Scene = CallFunc::create([]{
+//                auto scene = Ranking::createScene();
+                auto scene = Game1::createScene();
                 auto transition = TransitionPageTurn::create(0.5, scene, true);
                 Director::getInstance()->replaceScene(transition);
             });
         
-            this->runAction(moveRankingScene);
+//            this->runAction(moveRankingScene);
+            this->runAction(moveGame1Scene);
             
             return true;
         }

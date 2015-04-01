@@ -6,8 +6,8 @@
 //
 //
 
-#ifndef __RankingScene__
-#define __RankingScene__
+#ifndef __MyGame__RankingScene__
+#define __MyGame__RankingScene__
 
 #include <stdio.h>
 #include "cocos2d.h"
