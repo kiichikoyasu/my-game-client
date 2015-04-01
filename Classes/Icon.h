@@ -25,6 +25,16 @@ public:
         COUNT
     };
     
+    // アイコンが触られているかどうかの状態
+    enum class State{
+        //タッチされていない状態
+        NONE,
+        //タッチされている状態
+//        TOUCHING,
+        //タッチされたことがあるが今はタッチされていない状態
+        TOUCHED
+    };
+    
     /**
      * ステージ上の座標をグリッド座標に変換
      */
@@ -43,7 +53,9 @@ public:
     
     void adjustPosition();
     
-    CC_SYNTHESIZE_READONLY(Kind, _iconKind, IconKind);
+    
+    CC_SYNTHESIZE(State, _state, State);
+    CC_SYNTHESIZE(Kind, _kind, Kind);
     
     CC_SYNTHESIZE_READONLY_PASS_BY_REF(cocos2d::Vec2, _iconPosition, IconPosition);
     

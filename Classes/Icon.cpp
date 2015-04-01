@@ -11,7 +11,7 @@
 
 USING_NS_CC;
 
-Icon::Icon(){
+Icon::Icon(): _state(State::NONE){
     
 }
 
@@ -47,6 +47,8 @@ bool Icon::init(){
     }
     
     this->setScale(0.2098);
+    
+    setKind(static_cast<Icon::Kind>(kind));
 
     return true;
 }
